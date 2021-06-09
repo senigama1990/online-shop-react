@@ -93,3 +93,35 @@
     flex-direction: column;
     justify-content: space-between;
 }
+.cartPage-items {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cartItem-count {
+    padding: 5px 10px;
+    border: solid 1px #ccc;
+}
+.cartItem-addOne,
+.cartItem-removeOne {
+    padding: 5px 10px;
+    border: solid 1px #ccc;
+    background-color: #fff;
+}
+.cartItem-addOne {
+    border-left: none;
+}
+.cartItem-removeOne {
+    border-right: none;
+}
+.countItem-count {
+    display: inline-block;
+    padding: 2.3px 10px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.cartItem-controls {
+    display: flex;
+    align-items: center;
+}

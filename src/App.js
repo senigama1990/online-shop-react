@@ -13,23 +13,42 @@ const summarizeCart = (cart)=> {
     return Object.values(groupedItems)
 }
 
+
+
 function App() {
 
     const [cart, setCart]= useState([])
-    console.log(summarizeCart((cart)))
     const [activeTab, setActiveTab] = useState('items')
     function onAddToCart(item) {
         setCart(prevCart => {
             return [...prevCart, item]
         })
     }
+
+    const removeOne = (item) => {
+        const index = cart.findIndex(i => i.id === item.id)
+        if (index >= 0) {
+            setCart(cart => {
+                const copyCart = [...cart]
+                copyCart.splice(index, 1)
+                return copyCart
+            })
+        }
+    }
+
     return (
         <div className="app">
-            {cart.length}
+           
             <Nav activeTab={activeTab} onTabChange={setActiveTab}/>
             <main className='app-content'>
-                <Content cart={summarizeCart(cart)} onAddToCart={onAddToCart} tab={ activeTab}/>
+                <Content
+                    cart={summarizeCart(cart)}
+                    onAddToCart={onAddToCart}
+                    tab={activeTab}
+                    removeOne={removeOne}
+                />
             </main>
+           
         </div>
     );
 }

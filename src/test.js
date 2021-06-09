@@ -1,15 +1,19 @@
-const obj = {
-    name: "Javohir",
-    age: 23
-}
+// const obj = {
+//     name: "Javohir",
+//     age: 23
+// }
 
-console.log(Object.keys(obj))
-
-
+// console.log(Object.keys(obj))
 
 
+const names = ["Jack", "Walter", "Saul", "Dexter", "Saul"]
 
 
+const index = names.findIndex(name => name === "Saul")
+console.log(index)
+
+names.splice(index, 2)
+console.log(names)
 
 
 

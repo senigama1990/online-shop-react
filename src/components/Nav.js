@@ -3,7 +3,7 @@ import React from 'react'
 
 function Nav({activeTab, onTabChange}) {
     const itemClass = (tabName)=> {
-        return `app-nav-item ${activeTab == tabName ? 'selected': ''}`
+        return `app-nav-item ${activeTab === tabName ? 'selected': ''}`
     }
     return (
         <nav className='app-nav'>
