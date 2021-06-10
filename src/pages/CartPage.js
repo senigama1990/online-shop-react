@@ -2,6 +2,9 @@ import React from 'react'
 import Item from "../components/Item"
 
 function CartPage({ items, removeOne, addOne }) {
+    const total = items.reduce((sum, eachItem) => {
+        return sum + eachItem.price * eachItem.count
+    }, 0)
     return (
         <ul className='cartPage-items'>
             {items.map((item) => {
@@ -24,7 +27,9 @@ function CartPage({ items, removeOne, addOne }) {
                     </Item>
                 </li> 
             })}
-
+            <li>
+                Total: ${total.toFixed(2)}
+            </li>
         </ul>
 
     )

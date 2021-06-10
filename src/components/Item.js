@@ -1,7 +1,6 @@
 import React from 'react'
 
 function Item({ item, children }) {
-    const sum = item.price * item.count
     return (
         <div className='item'>
             <div className="item-left">
@@ -10,7 +9,7 @@ function Item({ item, children }) {
                 <div className="item-description">{item.description}</div>
             </div>
             <div className="item-right">
-                <div className="item-price">${sum}</div>
+                <div className="item-price">${item.price}</div>
                 {children}
             </div>
         </div>
